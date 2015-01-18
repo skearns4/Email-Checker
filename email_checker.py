@@ -14,13 +14,12 @@ password = getpass.getpass()
 imap_server.login(user, password)
 imap_server.select('Inbox', readonly=True)
 
-
 #method to create new .ics file for given day, month, and hours
 def create_event(year, month, day, hour_start, minute_start, hour_end, minute_end, filename):
     #create calendar and event objects
     cal = Calendar()
     event = Event()
-
+    
     #add schedule info to the event
     event.add('summary', 'Work')
     event.add('dtstart', datetime(year, month, day, hour_start, minute_start, tzinfo=pytz.timezone('US/Eastern')))
