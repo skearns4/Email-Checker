@@ -43,7 +43,7 @@ def create_event(year, month, day, hour_start, minute_start, hour_end, minute_en
 #finds email in inbox sent from the automated scheudle mailer
 typ, data = imap_server.search(None, 'FROM', "never_reply@website.com")
 
-#gets email data as a list
+#parses the email found with ^^line 44^^
 for num in data[0].split():
     rv, data = imap_server.fetch(num, '(RFC822)')
 
